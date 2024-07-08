@@ -1,9 +1,8 @@
-import { Button } from "./components/ui/button";
+import { Button } from "@/components/ui/button";
 
 const App = () => {
   return (
-    <div>
-      <h1 className="text-red-500">hi</h1>
+    <div className="">
       <Button>hello</Button>
     </div>
   );
