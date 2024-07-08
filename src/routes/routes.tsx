@@ -1,6 +1,6 @@
 import Error from "@/components/Error";
+import Home from "@/components/pages/Home";
 import MainLayout from "@/mainLayout/MainLayout";
-import { Home } from "lucide-react";
 import { createBrowserRouter } from "react-router-dom";
 
 const router = createBrowserRouter([
