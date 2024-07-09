@@ -2,7 +2,7 @@ import { Outlet } from 'react-router-dom';
 
 const MainLayout = () => {
     return (
-        <div>
+        <div className="bg-[#0E0E0E]">
             <Outlet />
         </div>
     );
