@@ -10,10 +10,10 @@ import {
 import { NavLink } from "react-router-dom";
 
 const routes = [
-    //   {
-    //     path: "/",
-    //     name: "Home",
-    //   },
+    {
+        path: "/",
+        name: "Home",
+    },
     {
         path: "/products",
         name: "Products",
@@ -28,7 +28,7 @@ const MobileMenu = () => {
     return (
         <Sheet>
             <SheetTrigger asChild>
-                <Button className="text-xl font-medium bg-transparent p-0">
+                <Button className="text-xl font-medium text-gray-200 bg-transparent p-0">
                     <svg
                         xmlns="http://www.w3.org/2000/svg"
                         fill="none"
@@ -46,9 +46,9 @@ const MobileMenu = () => {
                 </Button>
             </SheetTrigger>
 
-            <SheetContent side={"left"} className="bg-gray-100">
+            <SheetContent side={"left"} className="bg-[#2d0041]">
                 <SheetHeader className="text-left mb-5">
-                    <h2 className="text-xl font-bold text-gray-800">Menu</h2>
+                    <h2 className="text-xl font-bold text-white">Menu</h2>
                 </SheetHeader>
                 <div className="flex flex-col space-y-2">
                     {routes.map((route) => (
@@ -56,7 +56,7 @@ const MobileMenu = () => {
                             <NavLink
                                 key={route.path}
                                 className={({ isActive }) =>
-                                    ` text-lg font-medium text-gray-800 hover:text-orange-500 py-3 hover:border-b-2 hover:border-orange-500 ${isActive ? "text-orange-500" : ""
+                                    ` text-lg font-medium text-white hover:text-orange-500 py-3 hover:border-b-2 hover:border-orange-500 ${isActive ? "text-orange-500" : ""
                                     }`
                                 }
                                 to={route.path}
