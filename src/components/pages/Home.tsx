@@ -1,3 +1,4 @@
+import Discover from "../Discover/Discover";
 import Navbar from "../Header/Navbar";
 import { HeroSection } from "../Hero/Hero";
 import Testimonials from "../Testimonials/Testimonials";
@@ -9,6 +10,7 @@ const Home = () => {
 
             <Navbar />
             <HeroSection />
+            <Discover />
             <Testimonials />
             <Footer />
         </div>
