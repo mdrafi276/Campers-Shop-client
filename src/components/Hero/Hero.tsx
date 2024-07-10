@@ -7,8 +7,8 @@ import {
     CarouselNext,
     CarouselPrevious,
 } from "@/components/ui/carousel";
-import sliderImage2 from "../../assets/Image/bn4.jpg";
-import sliderImage1 from "../../assets/Image/bn3.jpg";
+// import sliderImage2 from "../../assets/Image/bn4.jpg";
+// import sliderImage1 from "../../assets/Image/bn3.jpg";
 // import sliderImage3 from "../../assets/Image/banner3.webp";
 // import sliderImage4 from "../../assets/Image/banner1.png";
 // import sliderImage5 from "../../assets/Image/banner5.jpg";
@@ -17,11 +17,11 @@ export function HeroSection() {
     const sliderData = [
         {
             id: 1,
-            image: sliderImage1,
+            image: 'https://i.ibb.co/GMzq1gL/2024-Classic-Instant-Orange-Lifestyle-High-13.jpg',
         },
         {
             id: 2,
-            image: sliderImage2,
+            image: 'https://i.ibb.co/GMzq1gL/2024-Classic-Instant-Orange-Lifestyle-High-13.jpg',
         },
         // {
         //     id: 3,

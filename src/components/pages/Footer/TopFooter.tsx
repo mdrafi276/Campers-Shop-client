@@ -38,7 +38,7 @@ const TopFooter = () => {
         },
     ];
     return (
-        <div className='py-10 lg:py-0 lg:h-[450px] border-b-gray-600 border-b flex flex-col lg:flex-row lg:p-10 items-center justify-between px-6'>
+        <div className='py-10 lg:py-0 lg:h-[450px] bg-[#000000] border-b-gray-600 border-b flex flex-col lg:flex-row lg:p-10 items-center justify-between px-6'>
 
             <div className="w-full lg:w-[400px]" >
                 <div>
@@ -72,7 +72,7 @@ const TopFooter = () => {
 
                             <NavLink
                                 key={route.path}
-                                className="text-[16px] lg:text-lg font-medium text-white hover:text-orange-500 py-2 hover:border-b-2 hover:border-orange-500 "
+                                className="text-[16px] lg:text-lg font-medium text-white hover:text-red-600 py-2 hover:border-b-2 hover:border-red-600 "
 
                                 to={route.path}
                             >
@@ -90,7 +90,7 @@ const TopFooter = () => {
 
                             <NavLink
                                 key={route.path}
-                                className="text-lg font-medium text-white hover:text-orange-500 py-2 hover:border-b-2 hover:border-orange-500 "
+                                className="text-lg font-medium text-white hover:text-red-600 py-2 hover:border-b-2 hover:border-red-600 "
 
                                 to={route.path}
                             >
@@ -103,11 +103,6 @@ const TopFooter = () => {
             </div>
 
             {/* menu items */}
-
-
-
-
-
 
             <div>
                 <h1>Find Us</h1>

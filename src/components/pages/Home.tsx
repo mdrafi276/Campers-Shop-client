@@ -1,5 +1,6 @@
 import Navbar from "../Header/Navbar";
 import { HeroSection } from "../Hero/Hero";
+import Testimonials from "../Testimonials/Testimonials";
 import Footer from "./Footer/Footer";
 
 const Home = () => {
@@ -8,6 +9,7 @@ const Home = () => {
 
             <Navbar />
             <HeroSection />
+            <Testimonials />
             <Footer />
         </div>
     );
