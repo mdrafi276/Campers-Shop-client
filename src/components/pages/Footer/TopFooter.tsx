@@ -38,7 +38,7 @@ const TopFooter = () => {
         },
     ];
     return (
-        <div className='py-10 lg:py-0 lg:h-[450px] bg-[#000000] border-b-gray-600 border-b flex flex-col lg:flex-row lg:p-10 items-center justify-between px-6'>
+        <div className='py-10 border-t border-t-gray-700 lg:py-0 lg:h-[450px] bg-[#000000] border-b-gray-600 border-b flex flex-col lg:flex-row lg:p-10 items-center justify-between px-6'>
 
             <div className="w-full lg:w-[400px]" >
                 <div>
@@ -106,9 +106,9 @@ const TopFooter = () => {
 
             <div>
                 <h1>Find Us</h1>
-                <div className='flex flex-col md:flex-row lg:flex-col items-center justify-center gap-10 '>
-                    <div className='flex items-center rounded-xl justify-center w-[270px] gap-5 p-3 border hover:border-red-500'>
-                        <div className='text-white border border-white p-3  rounded-2xl'>
+                <div className='flex  flex-col md:flex-row lg:flex-col items-center justify-center gap-10 '>
+                    <div className='flex items-center rounded-xl border-gray-500 justify-center w-[270px] gap-5 p-3 border hover:border-red-500'>
+                        <div className='text-white border border-gray-500 p-3  rounded-2xl'>
                             <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" className="text-white lucide lucide-at-sign"><circle cx="12" cy="12" r="4" /><path d="M16 8v5a3 3 0 0 0 6 0v-1a10 10 0 1 0-4 8" /></svg>
                         </div>
                         <div className='flex flex-col text-white'>
@@ -116,9 +116,9 @@ const TopFooter = () => {
                             <h1 className='text-[16px]'>example@gmail.com</h1>
                         </div>
                     </div>
-                    <div className='flex items-center rounded-xl justify-center w-[270px] gap-5 p-3 border hover:border-red-500'>
-                        <div className='text-white border border-white p-3 rounded-2xl'>
-                            <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" className="text-white lucide lucide-at-sign"><circle cx="12" cy="12" r="4" /><path d="M16 8v5a3 3 0 0 0 6 0v-1a10 10 0 1 0-4 8" /></svg>
+                    <div className='flex items-center rounded-xl border-gray-500 justify-center w-[270px] gap-7 p-3 border hover:border-red-500'>
+                        <div className='text-white border border-gray-500 p-3 rounded-2xl'>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" className="lucide  text-white lucide-headset"><path d="M3 11h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-5Zm0 0a9 9 0 1 1 18 0m0 0v5a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3Z" /><path d="M21 16v2a4 4 0 0 1-4 4h-5" /></svg>
                         </div>
                         <div className='flex flex-col text-white'>
                             <h1>Phone:</h1>

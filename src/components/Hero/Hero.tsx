@@ -51,7 +51,7 @@ export function HeroSection() {
                     {sliderData.map((slider) => (
                         <CarouselItem key={slider.id} className="min-w-full">
                             <Card className="bg-transparent">
-                                <CardContent className="flex items-center justify-center h-[500px] p-0">
+                                <CardContent className="flex items-center justify-center h-[600px] p-0">
                                     <img
                                         src={slider?.image}
                                         className="h-full w-full object-cover transition-transform duration-500 hover:scale-105"
