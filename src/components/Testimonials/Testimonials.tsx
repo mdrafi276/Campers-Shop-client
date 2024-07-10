@@ -16,7 +16,7 @@ const Testimonials = () => {
                             </div>
                             <div className="flex-grow">
                                 <h2 className="text-gray-100 text-lg title-font font-medium mb-3">Shooting Stars</h2>
-                                <p className="leading-relaxed text-base">Campers Shop offers fantastic camping gear and accessories. The products I purchased were well-made and reliable, and the customer support team was friendly and helpful. I’m thrilled with my experience and my new camping gear</p>
+                                <p className="leading-relaxed text-[12px] lg:text-[15px] ">Campers Shop offers fantastic camping gear and accessories. The products I purchased were well-made and reliable, and the customer support team was friendly and helpful. I’m thrilled with my experience and my new camping gear</p>
 
                             </div>
                         </div>
@@ -26,7 +26,7 @@ const Testimonials = () => {
                             </div>
                             <div className="flex-grow">
                                 <h2 className="text-gray-100 text-lg title-font font-medium mb-3">The Catalyzer</h2>
-                                <p className="leading-relaxed text-base">I love this company. The products I purchased were well-made and reliable, and the customer support team was friendly and helpful. I’m thrilled with my experience and my new camping gear</p>
+                                <p className="leading-relaxed text-[12px] lg:text-[15px]">I love this company. The products I purchased were well-made and reliable, and the customer support team was friendly and helpful. I’m thrilled with my experience and my new camping gear</p>
 
                             </div>
                         </div>
@@ -36,7 +36,7 @@ const Testimonials = () => {
                             </div>
                             <div className="flex-grow">
                                 <h2 className="text-gray-100 text-lg title-font font-medium mb-3">Neptune</h2>
-                                <p className="leading-relaxed text-base">The products I purchased were well-made and reliable, and the customer support team was friendly and helpful. I’m thrilled with my experience and my new camping gear"</p>
+                                <p className="leading-relaxed text-[12px] lg:text-[15px]">The products I purchased were well-made and reliable, and the customer support team was friendly and helpful. I’m thrilled with my experience and my new camping gear"</p>
 
                             </div>
                         </div>
