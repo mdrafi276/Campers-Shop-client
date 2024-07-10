@@ -27,7 +27,7 @@ const routes = [
 const MobileMenu = () => {
     return (
         <Sheet>
-            <SheetTrigger asChild>
+            <SheetTrigger asChild className='text-white'>
                 <Button className="text-xl font-medium text-gray-200 bg-transparent p-0">
                     <svg
                         xmlns="http://www.w3.org/2000/svg"
@@ -35,7 +35,7 @@ const MobileMenu = () => {
                         viewBox="0 0 24 24"
                         strokeWidth={1.5}
                         stroke="currentColor"
-                        className="size-6"
+                        className="size-6 text-white"
                     >
                         <path
                             strokeLinecap="round"

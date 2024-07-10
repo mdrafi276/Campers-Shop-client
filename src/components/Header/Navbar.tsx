@@ -21,8 +21,8 @@ const Navbar = () => {
                                 src='https://i.ibb.co/2WRx77P/Black-And-Beige-Minimalist-Aesthetic-Modern-Simple-Typography-Salt-Logo.png'
                                 alt="mountain-image"
                             />
-                            <h2 className="font-bold text-[14px] md:text-[16px] lg:text-xl text-gray-200">
-                                Rafi Trust's World
+                            <h2 className="font-bold text-[14px] md:text-[16px] lg:text-xl text-red-600">
+                                Advanture shop
                             </h2>
                         </Link>
                     </div>
