@@ -22,6 +22,10 @@ const routes = [
         path: "/about",
         name: "About Us",
     },
+    {
+        path: "/product-management",
+        name: "Product Management",
+    },
 ];
 
 const MobileMenu = () => {

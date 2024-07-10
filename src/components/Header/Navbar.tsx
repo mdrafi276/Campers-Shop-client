@@ -54,9 +54,9 @@ const Navbar = () => {
                                     ? "text-red-500 border-b-2 border-red-500 font-medium"
                                     : "text-gray-100 hover:text-red-500 hover:border-b-2 font-medium hover:border-red-500"
                             }
-                            to="/about"
+                            to="/product-management"
                         >
-                            About Us
+                            Product Management
                         </NavLink>
                         <NavLink
                             className={({ isActive }) =>
