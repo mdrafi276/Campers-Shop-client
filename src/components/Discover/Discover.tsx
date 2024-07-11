@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 
 const Discover = () => {
     return (
@@ -17,9 +18,10 @@ const Discover = () => {
                             <p className="mb-8 leading-relaxed selection:text-black text-white selection:font-bold selection:bg-white text-[12px] lg:text-[15px] ">Forged around a campfire, they are driven to extend and deepen outdoor experiences by providing the most sustainable solutions for apparel, footwear, and equipment, designing products for hiking, trekking, commuting, camping & bikepacking to enable the journey. Jack Wolfskin always encourages people to embrace wanderlust and to utilize time in nature to recharge. From their first steps, to thier last breath, life is made by moments of discovery.
 
                             </p>
-                            <div className="flex justify-center">
-                                <button className="inline-flex text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded text-lg">Button</button>
-                                <button className="ml-4 inline-flex text-gray-700 bg-gray-100 border-0 py-2 px-6 focus:outline-none hover:bg-gray-200 rounded text-lg">Button</button>
+                            <div className="flex justify-center items-center">
+                                <Link to='/products'>
+                                    <button className="inline-flex text-white bg-red-600 border-0 py-2 px-6 text-center focus:outline-none hover:bg-red-500 mx-auto rounded w-full text-lg">See More</button>
+                                </Link>
                             </div>
                         </div>
                     </div>

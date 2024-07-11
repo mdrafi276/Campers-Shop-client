@@ -6,11 +6,11 @@ import Headroom from "react-headroom";
 const Navbar = () => {
     return (
         <Headroom>
-            <section className=" bg-black py-5 px-4">
+            <section className=" bg-white/5 backdrop-blur-3xl py-5 px-4">
                 <div className="h-full max-w-7xl mx-auto flex items-center justify-between">
                     <div className="flex items-center gap-4">
                         {/* Mobile menu button */}
-                        <div className="lg:hidden">
+                        <div className="md:hidden">
                             <MobileMenu />
                         </div>
 
@@ -64,7 +64,7 @@ const Navbar = () => {
                                     ? "text-red-500 border-b-2 border-red-500 font-medium"
                                     : "text-gray-100 hover:text-red-500 hover:border-b-2 font-medium hover:border-red-500"
                             }
-                            to="/about"
+                            to="/about-us"
                         >
                             About Us
                         </NavLink>
@@ -74,7 +74,7 @@ const Navbar = () => {
                                     ? "text-red-500 border-b-2 border-red-500 font-medium"
                                     : "text-gray-100 hover:text-red-500 hover:border-b-2 font-medium hover:border-red-500"
                             }
-                            to="/about"
+                            to="/about-us"
                         >
                             About Us
                         </NavLink>
@@ -90,20 +90,7 @@ const Navbar = () => {
                             to="/cart"
                         >
                             <p className="hidden lg:block"></p>
-                            <svg
-                                xmlns="http://www.w3.org/2000/svg"
-                                fill="none"
-                                viewBox="0 0 24 24"
-                                strokeWidth={1.5}
-                                stroke="currentColor"
-                                className="size-6"
-                            >
-                                <path
-                                    strokeLinecap="round"
-                                    strokeLinejoin="round"
-                                    d="M15.75 10.5V6a3.75 3.75 0 1 0-7.5 0v4.5m11.356-1.993 1.263 12c.07.665-.45 1.243-1.119 1.243H4.25a1.125 1.125 0 0 1-1.12-1.243l1.264-12A1.125 1.125 0 0 1 5.513 7.5h12.974c.576 0 1.059.435 1.119 1.007ZM8.625 10.5a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Zm7.5 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Z"
-                                />
-                            </svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" className="lucide lucide-shopping-cart"><circle cx="8" cy="21" r="1" /><circle cx="19" cy="21" r="1" /><path d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12" /></svg>
                         </NavLink>
                         <NavLink
                             className={({ isActive }) =>

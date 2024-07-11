@@ -3,6 +3,9 @@ import MainLayout from "@/mainLayout/MainLayout";
 import { createBrowserRouter } from "react-router-dom";
 import Home from "@/components/pages/Home/Home";
 import ProductManagement from "@/components/pages/ProductManagement/ProductMangement";
+import CreateProduct from "@/components/pages/ProductManagement/CreateProducts";
+import UpdateProduct from "@/components/pages/ProductManagement/UpdateProduct";
+import AboutUs from "@/components/pages/AboutUs/AboutUs";
 
 const router = createBrowserRouter([
     {
@@ -17,7 +20,19 @@ const router = createBrowserRouter([
             {
                 path: '/product-management',
                 element: <ProductManagement />
-            }
+            },
+            {
+                path: '/create-product',
+                element: <CreateProduct />
+            },
+            {
+                path: '/update-product/:id',
+                element: <UpdateProduct />
+            },
+            {
+                path: '/about-us',
+                element: <AboutUs />
+            },
         ]
     }
 ])

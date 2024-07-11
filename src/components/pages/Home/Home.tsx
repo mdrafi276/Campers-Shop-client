@@ -1,16 +1,16 @@
 
-import Navbar from "@/components/Header/Navbar";
 import Footer from "../Footer/Footer";
 import { HeroSection } from "@/components/Hero/Hero";
 import Discover from "@/components/Discover/Discover";
 import Testimonials from "@/components/Testimonials/Testimonials";
+import FaqSection from "@/components/FAQ/FAQSection";
 
 const Home = () => {
     return (
         <div>
 
-            <Navbar />
             <HeroSection />
+            <FaqSection />
             <Discover />
             <Testimonials />
             <Footer />
