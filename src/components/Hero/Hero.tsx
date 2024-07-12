@@ -17,16 +17,16 @@ export function HeroSection() {
     const sliderData = [
         {
             id: 1,
-            image: 'https://i.ibb.co/GMzq1gL/2024-Classic-Instant-Orange-Lifestyle-High-13.jpg',
+            image: 'https://thegadgetflow.com/wp-content/uploads/2024/06/Aqara-Smart-Lock-U100-Slider.jpg',
         },
         {
             id: 2,
-            image: 'https://i.ibb.co/GMzq1gL/2024-Classic-Instant-Orange-Lifestyle-High-13.jpg',
+            image: 'https://thegadgetflow.com/wp-content/uploads/2024/07/Square-One-Mini-Keg-01-1024x576.jpeg',
         },
-        // {
-        //     id: 3,
-        //     image: sliderImage3,
-        // },
+        {
+            id: 3,
+            image: 'https://thegadgetflow.com/wp-content/uploads/2024/06/Deertv-Slider-Mobile.jpg',
+        },
         // {
         //     id: 4,
         //     image: sliderImage4,
@@ -38,7 +38,7 @@ export function HeroSection() {
     ];
 
     return (
-        <div className="relative w-full h-[500px] ">
+        <div className="relative w-full h-[400px] md:h-[500px]  ">
             <Carousel
                 className=" overflow-hidden rounded-lg shadow-lg"
                 plugins={[
@@ -49,12 +49,12 @@ export function HeroSection() {
             >
                 <CarouselContent className="flex">
                     {sliderData.map((slider) => (
-                        <CarouselItem key={slider.id} className="min-w-full">
-                            <Card className="bg-transparent">
-                                <CardContent className="flex items-center justify-center h-[90vh] p-0">
+                        <CarouselItem key={slider.id} className="min-w-full rounded-[15px] hover:rounded-[15px]">
+                            <Card className="bg-transparent rounded-[15px] hover:rounded-[15px]">
+                                <CardContent className="flex rounded-[15px] hover:rounded-[15px] items-center justify-center h-[499px]  p-0">
                                     <img
                                         src={slider?.image}
-                                        className="h-full w-full object-cover transition-transform duration-500 hover:scale-105"
+                                        className="h-full rounded-[15px] hover:rounded-[15px] w-full object-cover "
                                         alt=""
                                     />
                                 </CardContent>

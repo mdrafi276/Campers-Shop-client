@@ -1,3 +1,10 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.bg-image {
+    background-image: url("https://thegadgetflow.com/wp-content/uploads/2024/07/East-Oak-Rotomolded-Hard-Cooler-02.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+
+}
