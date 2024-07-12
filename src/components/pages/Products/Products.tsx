@@ -90,76 +90,82 @@ const Products = () => {
                             </svg>
                         </Button>
                     </form>
-                    <div className="flex items-center justify-between gap-1 md:gap-2 lg:gap-4">
-                        <div className="text-white">
-                            <DropdownMenu>
-                                <DropdownMenuTrigger asChild>
-                                    <Button className="text-white" variant="outline">Price Range</Button>
-                                </DropdownMenuTrigger>
-                                <DropdownMenuContent className=" w-36 md:w-40 px-2 md:px-3 py-2 text-[11px] md:text-[14px] lg:text-[15px] text-white bg-black space-y-3">
-                                    <div className="flex items-center gap-2">
-                                        <Label htmlFor="min" className="text-white text-[11px] md:text-[14px] lg:text-[15px]">
-                                            Min:
-                                        </Label>
-                                        <Input
-                                            id="min"
-                                            onChange={(e) => setMinPrice(e.target.value)}
-                                            className=""
-                                        />
-                                    </div>
-                                    <div className="flex items-center gap-2">
-                                        <Label htmlFor="max" className="text-[11px] md:text-[14px] lg:text-[14px] text-white">
-                                            Max:
-                                        </Label>
-                                        <Input
-                                            id="max"
-                                            onChange={(e) => setMaxPrice(e.target.value)}
-                                            className=""
-                                        />
-                                    </div>
-                                </DropdownMenuContent>
-                            </DropdownMenu>
+                    <div className="flex items-center  justify-between gap-1 md:gap-2 lg:gap-4">
+                        {/* first */}
+                        <div className="flex flex-row md:flex-row justify-between items-center">
+                            <div className="text-white">
+                                <DropdownMenu>
+                                    <DropdownMenuTrigger asChild>
+                                        <Button className="text-white text-[9px] md:text-[14px]" variant="outline">Price Range</Button>
+                                    </DropdownMenuTrigger>
+                                    <DropdownMenuContent className=" w-24 md:w-40 px-1 md:px-3 py-2 text-[9px] md:text-[14px] lg:text-[15px] text-white bg-black space-y-3">
+                                        <div className="flex items-center gap-1 md:gap-2">
+                                            <Label htmlFor="min" className="text-white text-[9px] md:text-[14px] lg:text-[15px]">
+                                                Min:
+                                            </Label>
+                                            <Input
+                                                id="min"
+                                                onChange={(e) => setMinPrice(e.target.value)}
+                                                className=""
+                                            />
+                                        </div>
+                                        <div className="flex items-center gap-1 md:gap-2">
+                                            <Label htmlFor="max" className="text-[10px] md:text-[14px] lg:text-[14px] text-white">
+                                                Max:
+                                            </Label>
+                                            <Input
+                                                id="max"
+                                                onChange={(e) => setMaxPrice(e.target.value)}
+                                                className=""
+                                            />
+                                        </div>
+                                    </DropdownMenuContent>
+                                </DropdownMenu>
+                            </div>
+                            <div className="text-white">
+                                <Select onValueChange={(value: string) => setCategory(value)}>
+                                    <SelectTrigger className="text-white">
+                                        <SelectValue placeholder="Category" />
+                                    </SelectTrigger>
+                                    <SelectContent className='text-white bg-black'>
+                                        <SelectGroup>
+                                            <SelectItem className="text-white text-[11px] md:text-[14px] lg:text-[15px]" value="Footwear">Footwear</SelectItem>
+                                            <SelectItem className="text-white text-[11px] md:text-[14px] lg:text-[15px]" value="Cooking Equipment">
+                                                Cooking Equipment
+                                            </SelectItem>
+                                            <SelectItem className="text-[11px] md:text-[14px] lg:text-[15px] text-white" value="Outdoor Furniture">
+                                                Outdoor Furniture
+                                            </SelectItem>
+                                            <SelectItem value="Accessories">Accessories</SelectItem>
+                                        </SelectGroup>
+                                    </SelectContent>
+                                </Select>
+                            </div>
                         </div>
-                        <div className="text-white">
-                            <Select onValueChange={(value: string) => setCategory(value)}>
-                                <SelectTrigger className="text-white">
-                                    <SelectValue placeholder="Category" />
-                                </SelectTrigger>
-                                <SelectContent className='text-white bg-black'>
-                                    <SelectGroup>
-                                        <SelectItem className="text-white text-[11px] md:text-[14px] lg:text-[15px]" value="Footwear">Footwear</SelectItem>
-                                        <SelectItem className="text-white text-[11px] md:text-[14px] lg:text-[15px]" value="Cooking Equipment">
-                                            Cooking Equipment
-                                        </SelectItem>
-                                        <SelectItem className="text-[11px] md:text-[14px] lg:text-[15px] text-white" value="Outdoor Furniture">
-                                            Outdoor Furniture
-                                        </SelectItem>
-                                        <SelectItem value="Accessories">Accessories</SelectItem>
-                                    </SelectGroup>
-                                </SelectContent>
-                            </Select>
-                        </div>
-                        <div>
-                            <Select onValueChange={(value: string) => setSortValue(value)}>
-                                <SelectTrigger className="text-white text-[11px] md:text-[14px] lg:text-[15px] ">
-                                    <SelectValue className="text-white text-[11px] md:text-[14px] lg:text-[15px]" placeholder="Sort By" />
-                                </SelectTrigger>
-                                <SelectContent className='text-white text-[11px] md:text-[14px] lg:text-[15px] bg-black '>
-                                    <SelectGroup className="text-white text-[11px] md:text-[14px] lg:text-[15px] ">
-                                        <SelectItem className="text-white text-[11px]  md:text-[14px] lg:text-[15px]" value="asc">Low To High</SelectItem>
-                                        <SelectItem className="text-white text-[11px] md:text-[14px] lg:text-[15px]" value="desc">High To Low</SelectItem>
-                                    </SelectGroup>
-                                </SelectContent>
-                            </Select>
-                        </div>
-                        <div>
-                            <Button
-                                onClick={handleReset}
-                                variant={"outline"}
-                                className="bg-black hover:text-white text-[11px] md:text-[14px] lg:text-[15px] text-white"
-                            >
-                                Reset All
-                            </Button>
+                        {/* second */}
+                        <div className="flex justify-center flex-row md:flex-row items-center">
+                            <div>
+                                <Select onValueChange={(value: string) => setSortValue(value)}>
+                                    <SelectTrigger className="text-white text-[9px] md:text-[14px] lg:text-[15px] ">
+                                        <SelectValue className="text-white text-[9px] md:text-[14px] lg:text-[15px]" placeholder="Sort By" />
+                                    </SelectTrigger>
+                                    <SelectContent className='text-white text-[9px] md:text-[14px] lg:text-[15px] bg-black '>
+                                        <SelectGroup className="text-white text-[9px] md:text-[14px] lg:text-[15px] ">
+                                            <SelectItem className="text-white text-[10px]  md:text-[14px] lg:text-[15px]" value="asc">Low To High</SelectItem>
+                                            <SelectItem className="text-white text-[9px] md:text-[14px] lg:text-[15px]" value="desc">High To Low</SelectItem>
+                                        </SelectGroup>
+                                    </SelectContent>
+                                </Select>
+                            </div>
+                            <div>
+                                <Button
+                                    onClick={handleReset}
+                                    variant={"outline"}
+                                    className="bg-black hover:text-white text-[9px] md:text-[14px] lg:text-[15px] text-white"
+                                >
+                                    Reset All
+                                </Button>
+                            </div>
                         </div>
                     </div>
                 </div>
