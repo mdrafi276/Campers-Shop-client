@@ -30,6 +30,7 @@ const AccrodionForDetailsPage = () => {
 
                     <button onClick={() => toggle(idx)} className="flex h-full w-full justify-between font-medium outline-none text-white">
 
+
                         <span className="font-bold text-white text-[13px] md:my-3 lg:text-[18px]">{PerAccordion.title}</span>
                         <span className="rounded-full p-2">
                             <svg className="ml-8 size-3 shrink-0 fill-white" xmlns="http://www.w3.org/2000/svg">
