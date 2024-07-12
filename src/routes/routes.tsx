@@ -8,7 +8,6 @@ import AboutUs from "@/components/pages/AboutUs/AboutUs";
 import NotFound from "@/components/NotFound/NotFound";
 import ProductDetails from "@/components/ProductDetails/ProductsDetails";
 import Products from "@/components/pages/Products/Products";
-
 const router = createBrowserRouter([
     {
         path: '/',
