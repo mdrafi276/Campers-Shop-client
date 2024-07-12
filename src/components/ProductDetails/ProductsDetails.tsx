@@ -42,18 +42,18 @@ const ProductDetails = () => {
 
 
     return (
-        <section className="border-2 w-full border-red-500 min-h-[400px] mx-auto my-16 px-3 lg:px-6 flex flex-col md:flex-row items-start gap-5">
+        <section className=" w-full bg-black min-h-[400px]  mx-auto py-16 px-3 lg:px-6 flex flex-col md:flex-row md:item-center lg:items-start gap-5">
             <div className=" overflow-hidden">
                 <img
-                    className="w-full  h-[400px] lg:h-[570px] lg:w-[900px] rounded-[20px]"
+                    className="w-full  h-[350px] md:h-[350px] md:w-full mx-auto lg:h-[570px] lg:w-[900px] rounded-[20px]"
                     src={data?.data?.image}
                     alt=""
                 />
             </div>
-            <div className=" border-2 p-2 lg:p-6 w-full lg:w-[700px] rounded-[20px] border-red-500  ">
+            <div className=" border-2 p-2 lg:p-6 w-full mx-auto md:w-full md:h-full lg:w-[700px] rounded-[20px] border-red-500  ">
                 <div className="py-4 border-b border-white space-y-2">
                     <div className="flex mb-1 lg:mb-10 items-center justify-between gap-2">
-                        <h2 className="text-4xl font-medium text-white font-young-serif">
+                        <h2 className=" text-[13px]  md:text-2xl lg:text-4xl font-medium text-white font-young-serif">
                             {data?.data?.name}
                         </h2>
                         <Rating
@@ -64,7 +64,7 @@ const ProductDetails = () => {
                             stop={5}
                         />
                     </div>
-                    <div className="flex  border-b-2 border-gray-100 mb-1 lg:pb-8 justify-start gap-5 lg:gap-8 items-center">
+                    <div className="flex  border-b-2 border-gray-100 mb-2 md:pb-6 lg:pb-8 justify-start gap-5 lg:gap-8 items-center">
                         <h3 className="text-[#FF0000] text-[15px] md:text-2xl lg:text-3xl font-normal ">
                             ${data?.data?.price}.00 USD
                         </h3>
@@ -73,9 +73,9 @@ const ProductDetails = () => {
                         </h3>
                     </div>
 
-                    <p className="text-white py-1 lg:py-5">{data?.data?.description}</p>
+                    <p className="text-white py-2 md:py-5 lg:py-5">{data?.data?.description}</p>
                 </div>
-                <div className="pt-5">
+                <div className="pt-5 w-[99%] mx-auto">
                     <div className="space-y-1">
 
                         <div className="flex items-center justify-between gap-2">

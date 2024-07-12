@@ -6,7 +6,7 @@ import { Star } from "lucide-react";
 
 const ProductCart = ({ product }) => {
     return (
-        <div className=" lg:w-[420px] h-full lg:h-[550px] mx-auto rounded-[20px] bg-black hover:bg-gray-700 border border-gray-200  flex flex-col gap-4  transition-transform duration-100 bg-">
+        <div className=" lg:min-w-[420px] md:h-[550px] md:min-w-[700px] w-[360px] h-[360px] md:max-w-[700px] lg:min-h-[550px] mx-auto rounded-[20px] bg-black hover:bg-gray-700 border border-gray-200  flex flex-col gap-4  transition-transform duration-100 bg-">
             <div className="flex-1 flex-grow overflow-hidden rounded-lg">
                 <img
                     className="w-full object-cover h-64 md:h-72  lg:h-[350px]  rounded-t-[10px]"

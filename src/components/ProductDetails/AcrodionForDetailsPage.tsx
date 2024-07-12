@@ -4,18 +4,22 @@ const AccrodionForDetailsPage = () => {
     const [isOpen, setIsOpen] = useState(null);
     const dataArr = [
         {
+            Details: "Can I change my shipping address?",
+            description: "Yes, you can change your shipping address before your order is shipped. Go to your account settings and update the shipping information accordingly.",
+            inStock: "In Stock",
+            outOfStock: "Out of stock",
+            cetegory: 'something.',
+        },
+        {
             title: "Delivery Time",
             description: "At our company, we prioritize swift delivery. Orders are processed within 24 hours and shipped using trusted partners, ensuring your products reach you within three days. Your satisfaction is our top priority.",
         },
         {
-            title: "What is your return policy?",
-            description: "Our return policy allows you to return items within 30 days of purchase. Please visit our returns page for detailed instructions and to initiate a return.",
+            title: "Refound Policy",
+            description: "Our refund policy is straightforward: if you're not satisfied with your purchase, contact us within 7 days of receipt, and we'll guide you through the return process. Once we receive the item in its original condition, we'll issue a refund to your original payment method. Your satisfaction is our priority, and we aim to make the refund process hassle-free.",
         },
 
-        {
-            title: "Can I change my shipping address?",
-            description: "Yes, you can change your shipping address before your order is shipped. Go to your account settings and update the shipping information accordingly.",
-        },
+
 
 
     ];
