@@ -21,7 +21,7 @@ const ProductManagement = () => {
     const [deleteProduct] = useDeleteProductMutation();
 
     if (isLoading) {
-        return <div className="text-white text-center">Loading...</div>;
+        return <div className="text-white bg-black text-center">Loading...</div>;
     }
 
     const handleDelete = (id: string) => {

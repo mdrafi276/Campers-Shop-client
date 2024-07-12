@@ -9,7 +9,7 @@ const BestSellingSection = () => {
     let loadingState;
 
     if (isLoading) {
-        return (loadingState = <div className="text-white text-center">Loading...</div>);
+        return (loadingState = <div className="text-white bg-black text-center">Loading...</div>);
     }
 
     return (

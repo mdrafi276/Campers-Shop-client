@@ -32,7 +32,7 @@ const UpdateProduct = () => {
     } = useForm();
 
     if (isProductLoading) {
-        return <div>Loading...</div>;
+        return <div className="text-white bg-black text-center">Loading...</div>;
     }
 
     const onSubmit = async (data) => {

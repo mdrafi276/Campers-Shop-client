@@ -35,7 +35,7 @@ const ProductDetails = () => {
         toast.success("Product added to cart");
     };
     if (isLoading) {
-        return <div className="text-white text-center">Loading...</div>;
+        return <div className="text-white bg-black pt-10 text-center">Loading...</div>;
     }
     const discount = data?.data?.price + 30;
 
