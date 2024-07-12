@@ -7,7 +7,7 @@ import UpdateProduct from "@/components/pages/ProductManagement/UpdateProduct";
 import AboutUs from "@/components/pages/AboutUs/AboutUs";
 import NotFound from "@/components/NotFound/NotFound";
 import ProductDetails from "@/components/ProductDetails/ProductsDetails";
-import Products from "@/components/pages/Products/Products";
+import ProductsPage from "@/components/pages/Products/ProductsPage";
 const router = createBrowserRouter([
     {
         path: '/',
@@ -40,7 +40,7 @@ const router = createBrowserRouter([
             },
             {
                 path: '/products',
-                element: <Products />
+                element: <ProductsPage />
             },
         ]
     }

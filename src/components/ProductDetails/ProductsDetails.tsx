@@ -75,6 +75,12 @@ const ProductDetails = () => {
 
                     <p className="text-white py-2 md:py-5 lg:py-5">{data?.data?.description}</p>
                 </div>
+                <div className='py-4 md:py-6'>
+                    <h1 className=" text-[16px] md:text-[20px] text-white font-bold">
+                        Available quantity: {data?.data?.quantity}
+                    </h1>
+
+                </div>
                 <div className="pt-5 w-[99%] mx-auto">
                     <div className="space-y-1">
 
