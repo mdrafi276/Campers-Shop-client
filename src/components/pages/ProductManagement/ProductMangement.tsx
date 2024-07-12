@@ -52,7 +52,7 @@ const ProductManagement = () => {
     };
 
     return (
-        <div className='bg-[#000000]  bg-gradient-to-br lg:pt-5 from-[#000000] via-[#06002a] to-[#000000] h-full lg:h-screen'>
+        <div className='bg-[#000000]  pb-6 lg:pb-20 md:pb-10 bg-gradient-to-br lg:pt-5 from-[#000000] via-[#06002a] to-[#000000] h-full lg:min-h-screen'>
             <div className="max-w-screen-xl   mx-auto lg:py-8 px-3  ">
                 <div className="border border-white z-20 bg-white/5 rounded-3xl p-8">
                     <div className="pb-6 flex items-center justify-between border-b border-gray-300">

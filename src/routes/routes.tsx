@@ -7,6 +7,7 @@ import UpdateProduct from "@/components/pages/ProductManagement/UpdateProduct";
 import AboutUs from "@/components/pages/AboutUs/AboutUs";
 import NotFound from "@/components/NotFound/NotFound";
 import ProductDetails from "@/components/ProductDetails/ProductsDetails";
+import Products from "@/components/pages/Products/Products";
 
 const router = createBrowserRouter([
     {
@@ -37,6 +38,10 @@ const router = createBrowserRouter([
             {
                 path: '/products-details/:id',
                 element: <ProductDetails />
+            },
+            {
+                path: '/products',
+                element: <Products />
             },
         ]
     }

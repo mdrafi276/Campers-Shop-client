@@ -5,8 +5,10 @@ import { Star } from "lucide-react";
 
 
 const ProductCart = ({ product }) => {
+    const discount = product?.price + 18;
+
     return (
-        <div className=" lg:min-w-[420px] md:h-[550px] md:min-w-[700px] w-[360px] h-[360px] md:max-w-[700px] lg:min-h-[550px] mx-auto rounded-[20px] bg-black hover:bg-gray-700 border border-gray-200  flex flex-col gap-4  transition-transform duration-100 bg-">
+        <div className=" lg:min-w-[420px] md:h-[550px] md:min-w-[700px] w-[300px] h-[360px] md:max-w-[700px] lg:min-h-[550px] mx-auto rounded-[20px] bg-black hover:bg-gray-700    flex flex-col gap-4  transition-transform duration-100 bg-">
             <div className="flex-1 flex-grow overflow-hidden rounded-lg">
                 <img
                     className="w-full object-cover h-64 md:h-72  lg:h-[350px]  rounded-t-[10px]"
@@ -30,11 +32,14 @@ const ProductCart = ({ product }) => {
             <div className="flex flex-col gap-5">
                 <div className="space-y-1">
 
-                    <div className="flex justify-around items-center">
-                        <h3 className="text-xl lg:text-[23px]   font-semibold text-[#FF0000]">
-                            $ {product?.price} USD
+                    <div className="flex justify-start  px-4 gap-3 items-center">
+                        <h3 className="text-[13px]  md:text-xl lg:text-[17px]   font-semibold text-[#FF0000]">
+                            $ {product?.price}.00 USD
                         </h3>
-                        <p className="text-sm lg:text-[20px] text-[#FF0000] font-medium flex items-center gap-1">
+                        <h3 className=" text-[11px] md:text-xl lg:text-[16px]   font-semibold text-white line-through">
+                            $ {discount}.00 USD
+                        </h3>
+                        <p className="text-[11px] text-center lg:pl-16 md:pl-80 pl-6 lg:text-[13px] text-white font-medium flex items-center gap-1">
                             <svg
                                 xmlns="http://www.w3.org/2000/svg"
                                 fill="none"

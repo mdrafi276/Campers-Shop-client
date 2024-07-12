@@ -37,7 +37,7 @@ const ProductDetails = () => {
     if (isLoading) {
         return <div className="text-white bg-black pt-10 text-center">Loading...</div>;
     }
-    const discount = data?.data?.price + 30;
+    const discount = data?.data?.price + 18;
 
 
 
@@ -50,10 +50,10 @@ const ProductDetails = () => {
                     alt=""
                 />
             </div>
-            <div className=" border-2 p-2 lg:p-6 w-full mx-auto md:w-full md:h-full lg:w-[700px] rounded-[20px] border-red-500  ">
+            <div className=" border-2 p-2 lg:p-6 w-full mx-auto md:w-[420px] md:h-full lg:w-[700px] rounded-[20px] border-red-600  ">
                 <div className="py-4 border-b border-white space-y-2">
                     <div className="flex mb-1 lg:mb-10 items-center justify-between gap-2">
-                        <h2 className=" text-[13px]  md:text-2xl lg:text-4xl font-medium text-white font-young-serif">
+                        <h2 className=" text-[15px]  md:text-2xl lg:text-4xl font-medium text-white font-young-serif">
                             {data?.data?.name}
                         </h2>
                         <Rating
@@ -64,11 +64,11 @@ const ProductDetails = () => {
                             stop={5}
                         />
                     </div>
-                    <div className="flex  border-b-2 border-gray-100 mb-2 md:pb-6 lg:pb-8 justify-start gap-5 lg:gap-8 items-center">
-                        <h3 className="text-[#FF0000] text-[15px] md:text-2xl lg:text-3xl font-normal ">
+                    <div className="flex pb-4 border-b-2 border-gray-100 mb-2 md:pb-6 lg:pb-8 justify-start gap-5 lg:gap-8 items-center">
+                        <h3 className="text-[#FF0000] text-[15px] md:text-xl lg:text-3xl font-normal ">
                             ${data?.data?.price}.00 USD
                         </h3>
-                        <h3 className="text-white text-2xl line-through font-bold ">
+                        <h3 className="text-white text-xl line-through font-bold ">
                             ${discount}.00 USD
                         </h3>
                     </div>
@@ -116,7 +116,7 @@ const ProductDetails = () => {
                                     Out Of Stock
                                 </p>
                             )}
-                            <p className="text-sm text-white font-medium flex items-center gap-1">
+                            <p className="text-[12px] text-white font-medium flex items-center gap-1">
                                 <svg
                                     xmlns="http://www.w3.org/2000/svg"
                                     fill="none"
@@ -155,7 +155,7 @@ const ProductDetails = () => {
                     </div>
 
                     <div>
-                        <AccrodionForDetailsPage />
+                        <AccrodionForDetailsPage data={data} />
                     </div>
                 </div>
             </div>

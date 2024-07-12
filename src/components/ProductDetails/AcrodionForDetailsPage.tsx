@@ -1,12 +1,11 @@
 import { useState } from "react";
 
-const AccrodionForDetailsPage = () => {
+const AccrodionForDetailsPage = ({ data }) => {
     const [isOpen, setIsOpen] = useState(null);
     const dataArr = [
         {
-            Details: "Can I change my shipping address?",
-            description: "Yes, you can change your shipping address before your order is shipped. Go to your account settings and update the shipping information accordingly.",
-            inStock: "In Stock",
+            title: "Details",
+            description: `${data?.data?.description}`,
             outOfStock: "Out of stock",
             cetegory: 'something.',
         },
@@ -46,6 +45,8 @@ const AccrodionForDetailsPage = () => {
                     <div className={`grid overflow-hidden  transition-all duration-300 ease-in-out ${isOpen === idx ? 'grid-rows-[1fr] pb-1 pt-3 opacity-100' : 'grid-rows-[0fr] opacity-0'}`}>
                         <div className="overflow-hidden pr-4 text-white  text-sm lg:text-[18px]">{PerAccordion.description}</div>
                     </div>
+
+
                 </div>
             ))}
         </div>
