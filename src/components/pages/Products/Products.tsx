@@ -56,7 +56,6 @@ const Products = () => {
     if (isLoading) {
         return (loading = <Loader height={"h-[500px]"} />);
     }
-
     return (
         <div>
             <div className="mb-4">
@@ -66,13 +65,13 @@ const Products = () => {
                         className="flex w-full  lg:w-[500px] items-center"
                     >
                         <Input
-                            className="focus-visible:ring-offset-0   text-white rounded-r-none   lg:py-7 lg:px-2 lg:rounded-l-[10px]  bg-black"
+                            className="focus-visible:ring-offset-0   text-white  border-gray-300    lg:py-7 lg:px-4 lg:rounded-l-[10px]  bg-black"
                             type="text"
                             placeholder="Search here..."
                             {...register("search")}
                         />
                         <Button
-                            className="bg-black lg:py-7  lg:px-4 lg:rounded-r-[10px]  rounded-l-none"
+                            className="bg-black lg:py-7  lg:px-4 lg:rounded-r-[10px] border-t border-r border-b  border-gray-300"
                             type="submit"
                         >
                             <svg
@@ -165,7 +164,7 @@ const Products = () => {
                     </div>
                 </div>
             </div>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 min-h-80 ">
+            <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-3 mx-auto w-[98%] min-h-80 ">
                 {isLoading
                     ? loading
                     : data?.data?.map((product) => (

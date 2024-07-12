@@ -15,10 +15,34 @@ export const baseApi = createApi({
         }),
 
         getProducts: builder.query({
-            query: () => ({
-                url: "/products",
-                method: "GET",
-            }),
+            query: (query) => {
+                const params = new URLSearchParams();
+
+                if (query?.search) {
+                    params.append("searchValue", query.search);
+                }
+
+                if (query?.category) {
+                    params.append("category", query.category);
+                }
+
+                if (query?.minPrice) {
+                    params.append("minPrice", query.minPrice);
+                }
+
+                if (query?.maxPrice) {
+                    params.append("maxPrice", query.maxPrice);
+                }
+
+                if (query?.sort) {
+                    params.append("sort", query.sort);
+                }
+
+                return {
+                    url: `/products?${params.toString()}`,
+                    method: "GET",
+                };
+            },
             providesTags: ["Products"],
         }),
         getBestProducts: builder.query({
@@ -36,11 +60,13 @@ export const baseApi = createApi({
             providesTags: ["Products"],
         }),
         updateProduct: builder.mutation({
-            query: (data) => ({
-                url: `/products/${data.id}`,
-                method: "PUT",
-                body: data.updatedData,
-            }),
+            query: (data) => {
+                return {
+                    url: `/products/${data.id}`,
+                    method: "PUT",
+                    body: data.updatedData,
+                };
+            },
             invalidatesTags: ["Products"],
         }),
 
@@ -75,10 +101,10 @@ export const baseApi = createApi({
 export const {
     useAddProductMutation,
     useGetProductsQuery,
+    useGetBestProductsQuery,
+    useDeleteProductMutation,
     useGetSingleProductQuery,
     useUpdateProductMutation,
-    useDeleteProductMutation,
-    useGetBestProductsQuery,
     useAddOrderMutation,
     useUpdateCartInfoMutation,
-} = baseApi
+} = baseApi;

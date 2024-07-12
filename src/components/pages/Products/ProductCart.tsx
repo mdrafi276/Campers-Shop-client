@@ -4,19 +4,23 @@ import { Button } from "@/components/ui/button";
 const ProductCart = ({ product }) => {
     return (
         <div
-            data-aos="fade-up"
-            className=" lg:max-w-80 h-full rounded-lg border border-gray-200 p-4 flex flex-col gap-4 hover:-translate-y-1 transition-transform duration-100"
+
+            className=" lg:w-[238px] h-full rounded-lg border mx-auto border-gray-200 flex flex-col gap-3"
         >
             <div className="flex-1 flex-grow overflow-hidden rounded-lg">
                 <img
-                    className="w-full object-cover h-64 md:h-72 lg:h-56 rounded-lg"
+                    className="w-full object-cover  md:h-h-[170px] lg:h-[170px] rounded-[15px]"
                     src={product?.image}
                     alt={product?.name}
                 />
             </div>
             <div className="flex flex-col gap-5">
                 <div className="space-y-1">
-                    <h3 className="text-xl font-bold text-gray-700 ">{product?.name}</h3>
+                    <div className="flex flex-row justify-center gap-2 items-center px-2">
+                        <h3 className="text-[13px] font-bold text-[#2FD06D]  py-1 px-4 rounded-[15px] bg-[#1D3534] ">${product?.price}</h3>
+                        <h3 className="text-[13px] font-bold text-[#2FD06D]  py-1 px-4 rounded-[15px] bg-[#1D3534] ">{product?.name}</h3>
+
+                    </div>
 
                     <div className="flex justify-between items-center">
                         <h3 className=" font-semibold text-orange-500">

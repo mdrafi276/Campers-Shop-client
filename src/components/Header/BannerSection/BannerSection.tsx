@@ -1,5 +1,6 @@
 import { HeroSection } from '@/components/Hero/Hero';
 import { CardContent } from '@/components/ui/card';
+import { Link } from 'react-router-dom';
 
 const BannerSection = () => {
     return (
@@ -9,16 +10,18 @@ const BannerSection = () => {
                     <HeroSection />
                 </div>
                 <div className='w-[340px] lg:block hidden'>
-                    <CardContent className="  lg:pb-14 bg-image flex flex-col rounded-[15px] hover:rounded-[15px] items-end justify-end  h-[499px]  p-0">
-                        <div className='pb-3'>
-                            <h1 className='text-sm text-center text-black bg-[#e1e1e197] rounded-[15px] py-2 px-4'>Form our MAG</h1>
-                        </div>
-                        <div className=''>
-                            <h1 className="text-white font-bold text-sm lg:text-[24px] ">The best gifts to </h1>
+                    <Link to='/products'>
+                        <CardContent className="  lg:pb-14 bg-image flex flex-col rounded-[15px] hover:rounded-[15px] items-end justify-end  h-[499px]  p-0">
+                            <div className='pb-3'>
+                                <h1 className='text-sm text-center text-black bg-[#e1e1e197] rounded-[15px] py-2 px-4'>Form our MAG</h1>
+                            </div>
+                            <div className=''>
+                                <h1 className="text-white font-bold text-sm lg:text-[24px] ">The best gifts to </h1>
 
-                            <h1 className="text-white font-bold text-sm lg:text-[24px]  pt-[2px]"> impress any brew geek.</h1>
-                        </div>
-                    </CardContent>
+                                <h1 className="text-white font-bold text-sm lg:text-[24px]  pt-[2px]"> impress any brew geek.</h1>
+                            </div>
+                        </CardContent>
+                    </Link>
                 </div>
                 <div className='w-[340px] lg:block hidden'>
                     <CardContent className="flex rounded-[15px] hover:rounded-[15px] items-center justify-center h-[499px]  p-0">
