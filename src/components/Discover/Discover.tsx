@@ -2,9 +2,9 @@ import { Link } from "react-router-dom";
 
 const Discover = () => {
     return (
-        <div className="bg-gradient-to-br lg:pt-20 from-[#000000] via-[#000000] to-[#6d0082]">
+        <div className="bg-gradient-to-br lg:pt-8 first-letter:  from-[#000000] via-[#000000] to-[#6d0082]">
             <div className=' lg:mt-32'>
-                <h1 className='text-white font-mono text-[19px] text-center  md:text-[30px] '>We Live To Discover
+                <h1 className='text-white font-mono text-[19px] text-center  md:text-[30px]lg:pb-8 '>We Live To Discover
                 </h1>
                 <section className="text-gray-600 body-font h-full   lg:h-[500px]">
                     <div className="container mx-auto flex md:flex-col px-5 md:pt-10 lg:flex-row justify-center lg:gap-0 md:gap-8 flex-col items-center">

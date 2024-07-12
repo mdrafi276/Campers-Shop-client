@@ -1,0 +1,72 @@
+import { Link } from "react-router-dom";
+import { Button } from "../ui/button";
+import Rating from "react-rating";
+import { Star } from "lucide-react";
+
+
+const ProductCart = ({ product }) => {
+    return (
+        <div className=" lg:w-[420px] h-full lg:h-[550px] mx-auto rounded-[20px] bg-black hover:bg-gray-700 border border-gray-200  flex flex-col gap-4  transition-transform duration-100 bg-">
+            <div className="flex-1 flex-grow overflow-hidden rounded-lg">
+                <img
+                    className="w-full object-cover h-64 md:h-72  lg:h-[350px]  rounded-t-[10px]"
+                    src={product?.image}
+                    alt={product?.name}
+                />
+            </div>
+            <div>
+                <h1 className="text-xl lg:text-[20px] text-center font-serif text-white">{product?.name}</h1>
+            </div>
+            <div className="flex items-center justify-center gap-2">
+
+                <Rating
+                    emptySymbol={<Star size={30} color="red" />}
+                    fullSymbol={<Star size={30} color="red" fill="red" />}
+                    fractions={2}
+                    initialRating={5}
+                    stop={5}
+                />
+            </div>
+            <div className="flex flex-col gap-5">
+                <div className="space-y-1">
+
+                    <div className="flex justify-around items-center">
+                        <h3 className="text-xl lg:text-[23px]   font-semibold text-[#FF0000]">
+                            $ {product?.price} USD
+                        </h3>
+                        <p className="text-sm lg:text-[20px] text-[#FF0000] font-medium flex items-center gap-1">
+                            <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                fill="none"
+                                viewBox="0 0 24 24"
+                                strokeWidth={1.5}
+                                stroke="currentColor"
+                                className="size-6"
+                            >
+                                <path
+                                    strokeLinecap="round"
+                                    strokeLinejoin="round"
+                                    d="M9.568 3H5.25A2.25 2.25 0 0 0 3 5.25v4.318c0 .597.237 1.17.659 1.591l9.581 9.581c.699.699 1.78.872 2.607.33a18.095 18.095 0 0 0 5.223-5.223c.542-.827.369-1.908-.33-2.607L11.16 3.66A2.25 2.25 0 0 0 9.568 3Z"
+                                />
+                                <path
+                                    strokeLinecap="round"
+                                    strokeLinejoin="round"
+                                    d="M6 6h.008v.008H6V6Z"
+                                />
+                            </svg>{" "}
+                            {product?.category}
+                        </p>
+                    </div>
+                </div>
+
+                <Link to={`/products-details/${product?._id}`} className="flex items-center justify-center mb-2 lg:mb-5">
+                    <Button className="w-[70%] rounded-[10px] hover-text-black font-serif mx-auto text-sm lg:text-[16px] bg-[#a61212] text-white hover:bg-red-600">
+                        See Details
+                    </Button>
+                </Link>
+            </div>
+        </div>
+    );
+};
+
+export default ProductCart;

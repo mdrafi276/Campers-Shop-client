@@ -30,7 +30,7 @@ const FaqSection = () => {
     };
 
     return (
-        <div className="lg:pt-36 bg-black mt-5 p-6 lg:p-0">
+        <div className="lg:pt-20 bg-black pt-2 pb-5 lg:pb-36 p-6 lg:p-0">
             <div className='flex pb-2 lg:pb-8 justify-center items-center gap-5 '>
                 <h1 className="text-[45px] text-white">FAQ</h1>
                 <svg xmlns="http://www.w3.org/2000/svg" width="38" height="38" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" className="lucide text-white lucide-message-circle-question"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z" /><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3" /><path d="M12 17h.01" /></svg>

@@ -21,6 +21,13 @@ export const baseApi = createApi({
             }),
             providesTags: ["Products"],
         }),
+        getBestProducts: builder.query({
+            query: () => ({
+                url: "/best-products",
+                method: "GET",
+            }),
+            providesTags: ["Products"],
+        }),
         getSingleProduct: builder.query({
             query: (id) => ({
                 url: `/products/${id}`,
@@ -53,4 +60,5 @@ export const {
     useGetSingleProductQuery,
     useUpdateProductMutation,
     useDeleteProductMutation,
+    useGetBestProductsQuery
 } = baseApi

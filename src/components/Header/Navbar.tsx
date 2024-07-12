@@ -68,16 +68,7 @@ const Navbar = () => {
                         >
                             About Us
                         </NavLink>
-                        <NavLink
-                            className={({ isActive }) =>
-                                isActive
-                                    ? "text-red-500 border-b-2 border-red-500 font-medium"
-                                    : "text-gray-100 hover:text-red-500 hover:border-b-2 font-medium hover:border-red-500"
-                            }
-                            to="/about-us"
-                        >
-                            About Us
-                        </NavLink>
+
                     </div>
                     <div className="flex items-center gap-4 md:gap-6">
                         <NavLink
