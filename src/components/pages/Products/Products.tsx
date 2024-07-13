@@ -129,12 +129,15 @@ const Products = () => {
                                     </SelectTrigger>
                                     <SelectContent className='text-white bg-black'>
                                         <SelectGroup>
-                                            <SelectItem className="text-white text-[11px] md:text-[14px] lg:text-[15px]" value="Footwear">Footwear</SelectItem>
+                                            <SelectItem className="text-white text-[11px] md:text-[14px] lg:text-[15px]" value="Footwear">Sleeping Gear
+                                            </SelectItem>
                                             <SelectItem className="text-white text-[11px] md:text-[14px] lg:text-[15px]" value="Cooking Equipment">
-                                                Cooking Equipment
+                                                Climbing Gear
+
                                             </SelectItem>
                                             <SelectItem className="text-[11px] md:text-[14px] lg:text-[15px] text-white" value="Outdoor Furniture">
-                                                Outdoor Furniture
+                                                Fishing Gear
+
                                             </SelectItem>
                                             <SelectItem value="Accessories">Accessories</SelectItem>
                                         </SelectGroup>
