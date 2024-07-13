@@ -19,12 +19,16 @@ const routes = [
         name: "Products",
     },
     {
-        path: "/about",
+        path: "/about-us",
         name: "About Us",
     },
     {
         path: "/product-management",
         name: "Product Management",
+    },
+    {
+        path: "/cart",
+        name: "cart",
     },
 ];
 
@@ -50,7 +54,7 @@ const MobileMenu = () => {
                 </Button>
             </SheetTrigger>
 
-            <SheetContent side={"left"} className="bg-[#2d0041]">
+            <SheetContent side={"left"} className="bg-[#020e34]">
                 <SheetHeader className="text-left mb-5">
                     <h2 className="text-xl font-bold text-white">Menu</h2>
                 </SheetHeader>

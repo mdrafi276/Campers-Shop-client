@@ -1,6 +1,6 @@
+import "./ImageManify.css"
 import {
-    useGetSingleProductQuery,
-    useUpdateProductMutation,
+    useGetSingleProductQuery
 } from "@/redux/api/baseApi";
 import { useParams } from "react-router-dom";
 import Rating from "react-rating";
@@ -9,18 +9,23 @@ import { Button } from "@/components/ui/button";
 import { useAppDispatch, useAppSelector } from "@/redux/hooks";
 import { addToCart } from "@/redux/api/featcher/cartSlice";
 import { toast } from "sonner";
-import BasicAccordion from "./AcrodionForDetailsPage";
 import AccrodionForDetailsPage from "./AcrodionForDetailsPage";
+import { useState } from "react";
 
 const ProductDetails = () => {
     const { id } = useParams();
+
+    // console.log(currentProduct);
+    const [position, setPosition] = useState({ x: 0, y: 0 });
+    const [showMagnifier, setShowMagnifier] = useState(false);
+    const [cursorPosition, setCursorPosition] = useState({ x: 0, y: 0 });
 
     const { data, isLoading } = useGetSingleProductQuery(id);
 
     const dispatch = useAppDispatch();
     const cart = useAppSelector((state) => state.cart);
     const currentProduct = cart?.find((item) => item._id === id);
-    // console.log(currentProduct);
+
 
     const handleAddToCart = async () => {
         const { quantity: oldQuantity, ...otherData } = data.data;
@@ -41,14 +46,52 @@ const ProductDetails = () => {
 
 
 
+
+    const handleMouseHover = (e) => {
+        // Corrected the usage of getBoundingClientRect
+        const { left, top, width, height } =
+            e.currentTarget.getBoundingClientRect();
+
+        const x = ((e.pageX - left - window.scrollX) / width) * 100;
+        const y = ((e.pageY - top - window.scrollY) / height) * 100;
+        const cursorX = e.pageX - left - window.scrollX;
+        const cursorY = e.pageY - top - window.scrollY;
+
+        setPosition({ x, y });
+
+        setCursorPosition({ x: cursorX, y: cursorY });
+    };
     return (
         <section className=" w-full bg-black min-h-[400px]  mx-auto py-16 px-3 lg:px-6 flex flex-col md:flex-row md:item-center lg:items-start gap-5">
             <div className=" overflow-hidden">
+
                 <img
-                    className="w-full  h-[350px] md:h-[350px] md:w-full mx-auto lg:h-[570px] lg:w-[900px] rounded-[20px]"
+                    className="w-full  magnifier-container h-[350px] md:h-[350px] md:w-full mx-auto lg:h-[570px] lg:w-[900px] rounded-[20px]img-magnifier-container"
+                    onMouseEnter={() => setShowMagnifier(true)}
+                    onMouseLeave={() => setShowMagnifier(false)}
+                    onMouseMove={handleMouseHover}
                     src={data?.data?.image}
                     alt=""
                 />
+                {showMagnifier && (
+                    <div
+                        style={{
+                            position: "absolute",
+                            left: `${cursorPosition.x - 100}px`,
+                            top: `${cursorPosition.y + 20}px`,
+                            pointerEvents: "none",
+                            width: "250px",
+                            height: "250px",
+                            border: "2px solid #000",
+                            borderRadius: "10px",
+                            backgroundImage: `url(${data?.data?.image})`,
+
+                            backgroundSize: "300%",
+                            backgroundPosition: `${position.x}% ${position.y}%`,
+                            zIndex: 10,
+                        }}
+                    ></div>
+                )}
             </div>
             <div className=" border-2 p-2 lg:p-6 w-full mx-auto md:w-[420px] md:h-full lg:w-[700px] rounded-[20px] border-red-600  ">
                 <div className="py-4 border-b border-white space-y-2">

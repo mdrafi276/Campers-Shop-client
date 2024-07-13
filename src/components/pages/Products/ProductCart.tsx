@@ -17,7 +17,7 @@ const ProductCart = ({ product }) => {
                 <div className="space-y-1">
                     <div className="flex flex-row justify-start gap-3 items-center px-2">
                         <h3 className="text-[13px] font-bold text-[#2FD06D]  py-1 px-4 rounded-[15px] bg-[#1D3534] ">${product?.price}</h3>
-                        <h3 className="text-[13px] font-bold text-[#ff6128]  py-1 px-4 rounded-[15px] bg-[#5e31316d] ">Stock</h3>
+                        <h3 className="text-[13px] font-bold text-[#ff6128]  py-1 px-4 rounded-[15px] bg-[#5e31316d] ">Available </h3>
 
                     </div>
 

@@ -13,7 +13,7 @@ const ThreeDCardDemo = ({ product }) => {
                     <div className="flex flex-row justify-between lg:px3 items-center">
                         <CardItem
                             translateZ="50"
-                            className="text-xl font-bold text-white dark:text-white"
+                            className="  text-sm md:text-xl font-bold text-white dark:text-white"
                         >
                             {product?.name}
                         </CardItem>
@@ -22,11 +22,11 @@ const ThreeDCardDemo = ({ product }) => {
                             className="text-xl font-bold text-white dark:text-white"
                         >
                             <div className="flex justify-start  px-4 gap-3 items-center">
-                                <h3 className="text-[13px]  md:text-xl lg:text-[16px]   font-bold text-[#FF0000]">
-                                    $ {product?.price}.00 USD
+                                <h3 className="text-[10px]  md:text-xl lg:text-[16px]   font-bold text-[#FF0000]">
+                                    $ {product?.price}.00
                                 </h3>
-                                <h3 className=" text-[11px] md:text-xl lg:text-[15px]   font-normal text-gray-300 line-through">
-                                    $ {discount}.00 USD
+                                <h3 className=" text-[9px] md:text-xl lg:text-[15px]   font-normal text-gray-300 line-through">
+                                    $ {discount}.00
                                 </h3>
 
                             </div>
