@@ -53,20 +53,20 @@ const ThreeDCardDemo = ({ product }) => {
                         />
                     </CardItem>
                     <div className="flex justify-between text-white items-center mt-20">
-                        <Link to="">
+                        <Link to="products">
                             <CardItem
                                 translateZ={20}
                                 as={Link}
                                 href="https://twitter.com/mannupaaji"
                                 target="__blank"
-                                className="px-4 py-2 rounded-xl text-xs font-normal dark:text-white"
+                                className="px-4 py-2 md:text-[14px]l bg-white text-black  rounded-xl text-xs font-bold dark:text-white"
                             >
                                 Try now →
                             </CardItem></Link>
-                        <Link to=''> <CardItem
+                        <Link to={`/products-details/${product?._id}`}> <CardItem
                             translateZ={20}
                             as="button"
-                            className="px-4 py-2 rounded-xl bg-black dark:bg-white dark:text-black text-white text-xs font-bold"
+                            className="px-4 py-2 rounded-xl bg-white dark:bg-white dark:text-black text-black text-xs  md:text-[14px] font-bold"
                         >
                             View Details
                         </CardItem></Link>

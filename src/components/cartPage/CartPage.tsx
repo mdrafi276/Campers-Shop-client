@@ -13,7 +13,6 @@ const CartPage = () => {
     const { data: products, isLoading } = useGetProductsQuery(undefined);
 
     const cart = useAppSelector((state) => state.cart);
-    console.log("cart ------->", cart);
 
 
     const dispatch = useAppDispatch();
@@ -22,7 +21,6 @@ const CartPage = () => {
         (total, item) => total + item.price * item.quantity,
         0
     );
-    console.log("totalPrice ---------->", totalPrice);
 
     const isDisabled = (item) => {
         const result = products.data.find((data) => data._id === item._id);
