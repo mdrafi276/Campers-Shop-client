@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 
 const Discover = () => {
     return (
-        <div className="bg-gradient-to-br lg:pt-8 first-letter:  from-[#000000] via-[#000000] to-[#6d0082]">
+        <div className="bg-gradient-to-br lg:pt-8 first-letter:  from-[#000000] via-[#000000] to-[#310202]">
             <div className=' lg:mt-32'>
                 <h1 className='text-white font-mono text-[19px] text-center  md:text-[30px]lg:pb-8 '>We Live To Discover
                 </h1>

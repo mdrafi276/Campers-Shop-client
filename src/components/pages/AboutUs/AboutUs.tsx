@@ -1,9 +1,10 @@
 import { Link } from "react-router-dom";
+import GoogleMap from "./GoogleMap";
 
 const AboutUs = () => {
     return (
         <div className="py-10 bg-black">
-            <div className="bg-gradient-to-br py-5 h-full lg:pt-4 from-[#000000] via-[#000000] to-[#6d0082]">
+            <div className="bg-gradient-to-br py-5 h-full lg:pt-4 from-[#000000] via-[#000000] to-[#280101]">
                 <div className=' lg:mt-10'>
                     <h1 className='text-white font-mono text-[19px] text-center  md:text-[40px] '>About Us
                     </h1>
@@ -30,7 +31,7 @@ const AboutUs = () => {
                     </section>
                 </div>
             </div>
-            <div className="bg-gradient-to-bl pb-5 lg:pt-20 lg:min-h-screen  from-[#000000] via-[#000000] to-[#6d0082]">
+            <div className="bg-gradient-to-tr pb-5 lg:pt-20 lg:min-h-screen  from-[#000000] via-[#000000] to-[#280101]">
                 <div className=' lg:mt-10'>
                     <h1 className='text-white font-mono text-[19px] text-center  md:text-[40px] '>
                     </h1>
@@ -59,6 +60,9 @@ const AboutUs = () => {
                     </section>
                 </div>
             </div>
+            {/* google map */}
+            <GoogleMap />
+            {/* google map */}
 
         </div>
 
