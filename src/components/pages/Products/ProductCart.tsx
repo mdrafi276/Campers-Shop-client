@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 
 const ProductCart = ({ product }) => {
-    const sortDis = product?.description.slice(0, 80)
+    const sortDis = product?.description.slice(0, 60)
     console.log(sortDis);
     return (
         <Link to={`/products-details/${product?._id}`}>  <div className=" lg:w-[238px] md:w-[236px] h-full rounded-lg  mx-auto  w-full flex flex-col gap-3"

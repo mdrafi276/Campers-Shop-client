@@ -2,7 +2,7 @@ import './NotFound.css'
 
 const NotFound = () => {
     return (
-        <div className='bg-black min-h-screen'>
+        <div className='lg:bg-black  min-h-screen'>
             <div className="main_wrapper mx-auto w-[90%]">
                 <div className="main">
                     <div className="antenna">
