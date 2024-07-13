@@ -15,7 +15,6 @@ import { useState } from "react";
 const ProductDetails = () => {
     const { id } = useParams();
 
-    // console.log(currentProduct);
     const [position, setPosition] = useState({ x: 0, y: 0 });
     const [showMagnifier, setShowMagnifier] = useState(false);
     const [cursorPosition, setCursorPosition] = useState({ x: 0, y: 0 });
@@ -25,7 +24,6 @@ const ProductDetails = () => {
     const dispatch = useAppDispatch();
     const cart = useAppSelector((state) => state.cart);
     const currentProduct = cart?.find((item) => item._id === id);
-
 
     const handleAddToCart = async () => {
         const { quantity: oldQuantity, ...otherData } = data.data;
@@ -38,6 +36,8 @@ const ProductDetails = () => {
         dispatch(addToCart(cartData));
 
         toast.success("Product added to cart");
+        console.log(cartData);
+
     };
     if (isLoading) {
         return <div className="text-white bg-black pt-10 text-center">Loading...</div>;
@@ -48,7 +48,7 @@ const ProductDetails = () => {
 
 
     const handleMouseHover = (e) => {
-        // Corrected the usage of getBoundingClientRect
+
         const { left, top, width, height } =
             e.currentTarget.getBoundingClientRect();
 
@@ -208,6 +208,7 @@ const ProductDetails = () => {
                     </div>
                 </div>
             </div>
+            {/* products */}
         </section>
     );
 };

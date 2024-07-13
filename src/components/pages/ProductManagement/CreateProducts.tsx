@@ -62,7 +62,7 @@ const CreateProduct = () => {
     };
 
     return (
-        <div className='bg-gradient-to-tr p-5 lg:p-0 from-[#6d0082] via-[#000]  to-[#000000]'>
+        <div className='bg-gradient-to-br p-5 lg:p-0 from-[#310202] via-[#000]  to-[#000]'>
             <div className=" w-lg  lg:w-[1000px]  mx-auto pt-6 lg:t-8">
                 <div>
                     <h1 className="text-3xl font-bold mb-5 text-center text-white ">
@@ -71,7 +71,7 @@ const CreateProduct = () => {
                 </div>
 
                 <form
-                    className="p-8 bg-white/5 lg:rounded-3xl border w-full  mx-auto text-white border-white  rounded-lg"
+                    className="p-8 bg-transparent rounded-[15px] lg:rounded-3xl border w-full  mx-auto text-white border-white  "
                     onSubmit={handleSubmit(onSubmit)}
                 >
                     <div className=" flex flex-col gap-6 py-4">

@@ -42,7 +42,7 @@ const MobileMenu = () => {
                         fill="none"
                         viewBox="0 0 24 24"
                         strokeWidth={1.5}
-                        stroke="currentColor"
+                        stroke="white"
                         className="size-6 text-white"
                     >
                         <path
@@ -54,7 +54,7 @@ const MobileMenu = () => {
                 </Button>
             </SheetTrigger>
 
-            <SheetContent side={"left"} className="bg-[#020e34]">
+            <SheetContent side={"left"} className="to-[#160202] from-[#000] bg-gradient-to-tr ">
                 <SheetHeader className="text-left mb-5">
                     <h2 className="text-xl font-bold text-white">Menu</h2>
                 </SheetHeader>

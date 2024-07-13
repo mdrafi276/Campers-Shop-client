@@ -6,7 +6,7 @@ import Headroom from "react-headroom";
 const Navbar = () => {
     return (
         <Headroom>
-            <section className=" bg-white/5 backdrop-blur-3xl py-5 px-4">
+            <section className=" bg-transparent backdrop-blur-lg py-5 px-4">
                 <div className="h-full max-w-7xl mx-auto flex items-center justify-between">
                     <div className="flex items-center gap-4">
                         {/* Mobile menu button */}

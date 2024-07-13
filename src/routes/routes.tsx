@@ -9,6 +9,7 @@ import NotFound from "@/components/NotFound/NotFound";
 import ProductDetails from "@/components/ProductDetails/ProductsDetails";
 import ProductsPage from "@/components/pages/Products/ProductsPage";
 import CartPage from "@/components/cartPage/CartPage";
+import Checkout from "../components/Checkout/Checkout";
 const router = createBrowserRouter([
     {
         path: '/',
@@ -46,6 +47,10 @@ const router = createBrowserRouter([
             {
                 path: '/cart',
                 element: <CartPage />
+            },
+            {
+                path: '/checkout',
+                element: <Checkout />
             },
         ]
     }
