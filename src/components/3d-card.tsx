@@ -1,8 +1,21 @@
 
 import { CardBody, CardContainer, CardItem } from "../components/ui/3d-card-section";
 import { Link } from "react-router-dom";
+export type TProduct = {
+    _id: string;
 
-const ThreeDCardDemo = ({ product }) => {
+    description: string;
+    image: string;
+    name: string;
+    price: number;
+
+
+};
+
+type ProductCardProps = {
+    product: TProduct;
+};
+const ThreeDCardDemo = ({ product }: ProductCardProps) => {
     const discount = product?.price + 18;
     const sortDis = product?.description.slice(0, 180)
 

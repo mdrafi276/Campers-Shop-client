@@ -2,7 +2,7 @@ import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 
 export const baseApi = createApi({
     reducerPath: "baseApi",
-    baseQuery: fetchBaseQuery({ baseUrl: "http://localhost:5000" }),
+    baseQuery: fetchBaseQuery({ baseUrl: "https://camperes-shop-project-server.vercel.app" }),
     tagTypes: ["Products"],
     endpoints: (builder) => ({
         addProduct: builder.mutation({
@@ -43,13 +43,6 @@ export const baseApi = createApi({
                     method: "GET",
                 };
             },
-            providesTags: ["Products"],
-        }),
-        getBestProducts: builder.query({
-            query: () => ({
-                url: "/best-products",
-                method: "GET",
-            }),
             providesTags: ["Products"],
         }),
         getSingleProduct: builder.query({
@@ -101,7 +94,6 @@ export const baseApi = createApi({
 export const {
     useAddProductMutation,
     useGetProductsQuery,
-    useGetBestProductsQuery,
     useDeleteProductMutation,
     useGetSingleProductQuery,
     useUpdateProductMutation,

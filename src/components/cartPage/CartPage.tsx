@@ -3,10 +3,11 @@ import Loader from "../Loading/Loader";
 import { Button } from "@/components/ui/button";
 import { useAppDispatch, useAppSelector } from "@/redux/hooks";
 import Swal from "sweetalert2";
-import { decreaseQuantity, deleteItem, increaseQuantity } from "@/redux/api/featcher/cartSlice";
+import { decreaseQuantity, deleteItem, increaseQuantity, TCartItem } from "@/redux/api/featcher/cartSlice";
 
 import { TableBody, TableCell, TableFooter, TableHead, Table, TableHeader, TableRow } from "../../components/ui/table";
 import { Link } from "react-router-dom";
+import { TProduct } from "../pages/Products/ProductCart";
 
 
 const CartPage = () => {
@@ -22,8 +23,8 @@ const CartPage = () => {
         0
     );
 
-    const isDisabled = (item) => {
-        const result = products.data.find((data) => data._id === item._id);
+    const isDisabled = (item: TCartItem) => {
+        const result = products.data.find((data: TProduct) => data._id === item._id);
         return result.quantity === item.quantity || result.stock === false;
     };
     const handleDeleteItem = (id: string) => {
@@ -50,10 +51,10 @@ const CartPage = () => {
     let loading;
 
     if (isLoading) {
-        return (loading = <Loader height={"h-[500px]"} />);
+        return (loading = <Loader />);
     }
     return (
-        <div className="w-full bg-black bg-gradient-to-br from-[#290000] via-[#000] to-[#000]">
+        <div className="w-full lg:min-h-[980px] bg-black bg-gradient-to-br from-[#290000] via-[#000] to-[#000]">
 
             <div className=" max-w-screen-xl  mx-auto py-20 min-h-[400px]">
                 <div className="max-w-screen-xl mx-auto py-10 px-3 ">

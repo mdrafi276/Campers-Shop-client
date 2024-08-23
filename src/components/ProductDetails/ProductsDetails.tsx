@@ -3,17 +3,27 @@ import {
     useGetSingleProductQuery
 } from "@/redux/api/baseApi";
 import { useParams } from "react-router-dom";
-import Rating from "react-rating";
-import { Star } from "lucide-react";
+
 import { Button } from "@/components/ui/button";
 import { useAppDispatch, useAppSelector } from "@/redux/hooks";
 import { addToCart } from "@/redux/api/featcher/cartSlice";
 import { toast } from "sonner";
 import AccrodionForDetailsPage from "./AcrodionForDetailsPage";
-import { useState } from "react";
+import React, { useState } from "react";
+// import Rating from "react-rating";
+import { Rating, ThinStar } from '@smastrom/react-rating';
+import '@smastrom/react-rating/style.css';
 
+const myStyles = {
+    itemShapes: ThinStar,
+    activeFillColor: '#cb2222',
+    inactiveFillColor: '#fbf1a9'
+}
 const ProductDetails = () => {
+
     const { id } = useParams();
+    const [rating, setRating] = useState(0);
+
 
     const [position, setPosition] = useState({ x: 0, y: 0 });
     const [showMagnifier, setShowMagnifier] = useState(false);
@@ -26,7 +36,7 @@ const ProductDetails = () => {
     const currentProduct = cart?.find((item) => item._id === id);
 
     const handleAddToCart = async () => {
-        const { quantity: oldQuantity, ...otherData } = data.data;
+        const { __v, quantity: oldQuantity, ...otherData } = data.data;
 
         const cartData = {
             ...otherData,
@@ -40,14 +50,14 @@ const ProductDetails = () => {
 
     };
     if (isLoading) {
-        return <div className="text-white bg-black pt-10 text-center">Loading...</div>;
+        return <div className=" text-white bg-black pt-10 text-center">Loading...</div>;
     }
     const discount = data?.data?.price + 18;
 
 
 
 
-    const handleMouseHover = (e) => {
+    const handleMouseHover = (e: React.MouseEvent<HTMLDivElement>) => {
 
         const { left, top, width, height } =
             e.currentTarget.getBoundingClientRect();
@@ -99,13 +109,18 @@ const ProductDetails = () => {
                         <h2 className=" text-[15px]  md:text-2xl lg:text-4xl font-medium text-white font-young-serif">
                             {data?.data?.name}
                         </h2>
-                        <Rating
-                            emptySymbol={<Star size={22} color="red" />}
-                            fullSymbol={<Star size={22} color="red" fill="red" />}
-                            fractions={2}
-                            initialRating={data?.data?.rating}
-                            stop={5}
+                        <div>  <Rating className="size-10  w-fit"
+                            // value={rating}
+                            onChange={setRating}
+                           
+                           
+                            style={{ maxWidth: 100, }}
+                            readOnly={false}
+                            value={data?.data?.rating}
+                            itemStyles={myStyles}
                         />
+                            <p>Your rating: {rating} </p></div>
+
                     </div>
                     <div className="flex pb-4 border-b-2 border-gray-100 mb-2 md:pb-6 lg:pb-8 justify-start gap-5 lg:gap-8 items-center">
                         <h3 className="text-[#FF0000] text-[15px] md:text-xl lg:text-3xl font-normal ">
@@ -144,10 +159,10 @@ const ProductDetails = () => {
                                             d="m4.5 12.75 6 6 9-13.5"
                                         />
                                     </svg>{" "}
-                                    Stock
+                                    In Stock
                                 </p>
                             ) : (
-                                <p className="text-red-400  text-xl font-bold flex gap-1 items-center">
+                                <p className="text-red-500  text-xl font-bold flex gap-1 items-center">
                                     <svg
                                         xmlns="http://www.w3.org/2000/svg"
                                         fill="none"
@@ -166,25 +181,7 @@ const ProductDetails = () => {
                                 </p>
                             )}
                             <p className="text-[12px] text-white font-medium flex items-center gap-1">
-                                <svg
-                                    xmlns="http://www.w3.org/2000/svg"
-                                    fill="none"
-                                    viewBox="0 0 24 24"
-                                    strokeWidth={1.5}
-                                    stroke="currentColor"
-                                    className="size-4"
-                                >
-                                    <path
-                                        strokeLinecap="round"
-                                        strokeLinejoin="round"
-                                        d="M9.568 3H5.25A2.25 2.25 0 0 0 3 5.25v4.318c0 .597.237 1.17.659 1.591l9.581 9.581c.699.699 1.78.872 2.607.33a18.095 18.095 0 0 0 5.223-5.223c.542-.827.369-1.908-.33-2.607L11.16 3.66A2.25 2.25 0 0 0 9.568 3Z"
-                                    />
-                                    <path
-                                        strokeLinecap="round"
-                                        strokeLinejoin="round"
-                                        d="M6 6h.008v.008H6V6Z"
-                                    />
-                                </svg>{" "}
+
                                 {data?.data?.category}
                             </p>
                         </div>

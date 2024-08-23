@@ -1,12 +1,22 @@
-import { createSlice } from "@reduxjs/toolkit";
-
-const initialState: object[] = [];
+import { createSlice, PayloadAction } from "@reduxjs/toolkit";
+export type TCartItem = {
+    _id: string;
+    category: string;
+    description: string;
+    image: string;
+    name: string;
+    price: number;
+    quantity: number;
+    rating: number;
+    stock: boolean;
+};
+const initialState: TCartItem[] = [];
 
 export const cartSlice = createSlice({
     name: "cart",
     initialState,
     reducers: {
-        addToCart: (state, action) => {
+        addToCart: (state, action: PayloadAction<TCartItem>) => {
             const existingItem = state.find(
                 (item) => item._id === action.payload._id
             );

@@ -15,9 +15,15 @@ import {
 import { useAppSelector } from "@/redux/hooks";
 import { Label } from "@radix-ui/react-label";
 import { useState } from "react";
-import { useForm } from "react-hook-form";
+import { SubmitHandler, useForm } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
 import { toast } from "sonner";
+type FormData = {
+    name: string;
+    email: string;
+    phone: string;
+    address: string;
+};
 
 const Checkout = () => {
     const [onCash, setIsOnCash] = useState("");
@@ -27,7 +33,7 @@ const Checkout = () => {
         register,
         handleSubmit,
         formState: { errors },
-    } = useForm();
+    } = useForm<FormData>();
 
     const [addPayment] = useAddOrderMutation();
     const [updateCartInfo] = useUpdateCartInfoMutation();
@@ -40,7 +46,7 @@ const Checkout = () => {
         };
     });
 
-    const onSubmit = async (data) => {
+    const onSubmit: SubmitHandler<FormData> = async (data) => {
         const orderData = {
             name: data.name,
             email: data.email,
@@ -77,10 +83,10 @@ const Checkout = () => {
                         <img className=" px-2 w-[70%]  mx-auto lg:my-20 rounded-[20px] lg:h-[450px] lg:w-[100%]" src="https://i.ibb.co/kcyjCpH/2846458-422859-PDRO5-O-153.jpg" alt="" />
                     </div>
                     <form
-                        className="p-5 border lg:h-[550px] md:h-[550px] w-[320px] md:w-[550px] rounded-[15px] lg:w-[500px] border-gray-300 "
+                        className="p-5 border lg:min-h-[650px] md:pt-16 lg:pt-16 md:h-[650px] w-[320px] md:w-[550px] rounded-[15px] lg:w-[550px] border-gray-300 "
                         onSubmit={handleSubmit(onSubmit)}
                     >
-                        <div className="  flex flex-col gap-6 py-4">
+                        <div className="  flex flex-col  gap-6 py-4">
                             <div className="flex flex-col gap-2">
                                 <Label htmlFor="name" className="text-white">
                                     Name

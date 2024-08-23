@@ -1,6 +1,6 @@
 import { useGetProductsQuery } from "@/redux/api/baseApi";
-import ProductCart from "./ProductCart";
-import { useForm } from "react-hook-form";
+import ProductCart, { TProduct } from "./ProductCart";
+import { SubmitHandler, useForm } from "react-hook-form";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import {
@@ -19,7 +19,9 @@ import {
 } from "@/components/ui/dropdown-menu";
 import { Label } from "@/components/ui/label";
 import Loader from "@/components/Loading/Loader";
-
+type TFormData = {
+    search: string;
+};
 const Products = () => {
     const [searchValue, setSearchValue] = useState("");
     const [sortValue, setSortValue] = useState("");
@@ -27,9 +29,9 @@ const Products = () => {
     const [minPrice, setMinPrice] = useState("");
     const [maxPrice, setMaxPrice] = useState("");
 
-    const { register, handleSubmit } = useForm();
+    const { register, handleSubmit } = useForm<TFormData>();
 
-    const onSubmit = (data) => {
+    const onSubmit: SubmitHandler<TFormData> = (data) => {
         setSearchValue(data.search);
     };
 
@@ -43,7 +45,7 @@ const Products = () => {
 
     console.log(sortValue);
 
-    const { data, isLoading, refetch } = useGetProductsQuery({
+    const { data, isLoading, } = useGetProductsQuery({
         search: searchValue,
         sort: sortValue,
         category,
@@ -54,7 +56,7 @@ const Products = () => {
     let loading;
 
     if (isLoading) {
-        return (loading = <Loader height={"h-[500px]"} />);
+        return (loading = <Loader />);
     }
     return (
         <div>
@@ -129,13 +131,13 @@ const Products = () => {
                                     </SelectTrigger>
                                     <SelectContent className='text-white bg-black'>
                                         <SelectGroup>
-                                            <SelectItem className="text-white text-[11px] md:text-[14px] lg:text-[15px]" value="Footwear">Sleeping Gear
+                                            <SelectItem className="text-white text-[11px] md:text-[14px] lg:text-[15px]" value="Sleeping Gear">Sleeping Gear
                                             </SelectItem>
-                                            <SelectItem className="text-white text-[11px] md:text-[14px] lg:text-[15px]" value="Cooking Equipment">
+                                            <SelectItem className="text-white text-[11px] md:text-[14px] lg:text-[15px]" value="Climbing Gear">
                                                 Climbing Gear
 
                                             </SelectItem>
-                                            <SelectItem className="text-[11px] md:text-[14px] lg:text-[15px] text-white" value="Outdoor Furniture">
+                                            <SelectItem className="text-[11px] md:text-[14px] lg:text-[15px] text-white" value="Fishing Gear">
                                                 Fishing Gear
 
                                             </SelectItem>
@@ -176,7 +178,7 @@ const Products = () => {
             <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-3 mx-auto w-[98%] min-h-80 ">
                 {isLoading
                     ? loading
-                    : data?.data?.map((product) => (
+                    : data?.data?.map((product: TProduct) => (
                         <ProductCart key={product._id} product={product} />
                     ))}
             </div>

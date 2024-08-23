@@ -1,6 +1,22 @@
 import { Link } from "react-router-dom";
+export type TProduct = {
+    _id: string;
+    category: string;
+    description: string;
+    image: string;
+    name: string;
+    price: number;
+    quantity: number;
+    rating: number;
+    stock: boolean;
+    __v: number;
+};
 
-const ProductCart = ({ product }) => {
+type ProductCardProps = {
+    product: TProduct;
+};
+
+const ProductCart = ({ product }: ProductCardProps) => {
     const sortDis = product?.description.slice(0, 60)
     console.log(sortDis);
     return (
@@ -17,7 +33,9 @@ const ProductCart = ({ product }) => {
                 <div className="space-y-1">
                     <div className="flex flex-row justify-start gap-3 items-center px-2">
                         <h3 className="text-[13px] font-bold text-[#2FD06D]  py-1 px-4 rounded-[15px] bg-[#1D3534] ">${product?.price}</h3>
-                        <h3 className="text-[13px] font-bold text-[#ff6128]  py-1 px-4 rounded-[15px] bg-[#5e31316d] ">Available </h3>
+                        <h3 className="text-[12px] font-bold text-[#ff6128]  py-1 px-4 rounded-[15px] bg-[#5e31316d] ">
+                            {product?.stock ? "AVAILABLE" : "OUT OF STOCK"}
+                        </h3>
 
                     </div>
 

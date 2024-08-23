@@ -1,10 +1,36 @@
 import { Link } from "react-router-dom";
 import { Button } from "../ui/button";
-import Rating from "react-rating";
-import { Star } from "lucide-react";
+// import Rating from "react-rating";
+// import { Star } from "lucide-react";
 
+import { Rating, ThinStar } from '@smastrom/react-rating';
+import '@smastrom/react-rating/style.css';
+import { useState } from "react";
+export type TProduct = {
+    _id: string;
+    category: string;
+    description: string;
+    image: string;
+    name: string;
+    price: number;
+    quantity: number;
+    rating: number;
+    stock: boolean;
+    __v: number;
+};
 
-const ProductCart = ({ product }) => {
+type ProductCardProps = {
+    product: TProduct;
+};
+
+const myStyles = {
+    itemShapes: ThinStar,
+    activeFillColor: '#cb2222',
+    inactiveFillColor: '#fbf1a9'
+}
+const ProductCart = ({ product }: ProductCardProps) => {
+    const [rating, setRating] = useState(0);
+
     const discount = product?.price + 18;
 
     return (
@@ -21,13 +47,17 @@ const ProductCart = ({ product }) => {
             </div>
             <div className="flex items-center justify-center gap-2">
 
-                <Rating
-                    emptySymbol={<Star size={30} color="red" />}
-                    fullSymbol={<Star size={30} color="red" fill="red" />}
-                    fractions={2}
-                    initialRating={5}
-                    stop={5}
+                <div>  <Rating className=" size-10 w-fit"
+                    // value={rating}
+                    onChange={setRating}
+
+
+                    style={{ maxWidth: 100, }}
+                    readOnly={false}
+                    value={product?.rating ?? 0}
+                    itemStyles={myStyles}
                 />
+                    <p>Your rating: {rating} </p></div>
             </div>
             <div className="flex flex-col gap-5">
                 <div className="space-y-1">

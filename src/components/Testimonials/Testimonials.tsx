@@ -5,7 +5,7 @@ const Testimonials = () => {
 
     return (
         <div className=' bg-gradient-to-tr from-[#000000] via-[#000000] to-[#310202]'>
-            <h1 className="text-2xl  md:text-2xl lg:text-3xl text-center text-white font-semibold md:pt-8 pt-8 lg:pt-10">Testimonials</h1>
+            <h1 className="text-2xl  md:text-2xl lg:text-3xl text-center text-white md:pt-8 pt-8 lg:pt-10 font-mono">Testimonials</h1>
             <section className="text-gray-100 body-font">
                 <div className="container px-5 py-24 mx-auto">
 

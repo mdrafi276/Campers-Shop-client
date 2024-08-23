@@ -3,8 +3,9 @@ import Footer from '@/components/pages/Footer/Footer';
 import { useAppSelector } from '@/redux/hooks';
 import { useEffect } from 'react';
 import { Outlet } from 'react-router-dom';
-
+import '@smastrom/react-rating/style.css'; // Import the default styles
 const MainLayout = () => {
+
     const cart = useAppSelector((state) => state.cart);
 
     console.log(cart);

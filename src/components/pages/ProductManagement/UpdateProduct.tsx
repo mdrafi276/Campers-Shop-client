@@ -5,9 +5,10 @@ import {
     useGetSingleProductQuery,
     useUpdateProductMutation,
 } from "@/redux/api/baseApi";
-import { useForm } from "react-hook-form";
+import { SubmitHandler, useForm } from "react-hook-form";
 import { useNavigate, useParams } from "react-router-dom";
 import { toast } from "sonner";
+import { TFormData } from "./CreateProducts";
 
 const UpdateProduct = () => {
     const apiKey = import.meta.env.VITE_IMAGEBB_API_KEY;
@@ -29,13 +30,13 @@ const UpdateProduct = () => {
         register,
         handleSubmit,
         formState: { errors },
-    } = useForm();
+    } = useForm<TFormData>();
 
     if (isProductLoading) {
         return <div className="text-white bg-black text-center">Loading...</div>;
     }
 
-    const onSubmit = async (data) => {
+    const onSubmit: SubmitHandler<TFormData> = async (data) => {
         const formData = new FormData();
         formData.append("image", data.image[0]);
 
@@ -157,7 +158,7 @@ const UpdateProduct = () => {
                                 defaultValue={product?.data?.price}
                                 {...register("price", { required: true })}
                             />
-                            {errors.number && (
+                            {errors.price && (
                                 <p className="text-red-500 text-sm ">Price is required</p>
                             )}
                         </div>

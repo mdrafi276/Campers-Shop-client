@@ -1,10 +1,11 @@
-import { useGetBestProductsQuery } from "@/redux/api/baseApi";
+import { useGetProductsQuery } from "@/redux/api/baseApi";
 import { Button } from "../ui/button";
 import { Link } from "react-router-dom";
 import ProductCart from "./ProductCart";
+import { TProduct } from "../pages/Products/ProductCart";
 
 const BestSellingSection = () => {
-    const { data, isLoading } = useGetBestProductsQuery(undefined);
+    const { data, isLoading } = useGetProductsQuery(undefined);
 
     let loadingState;
 
@@ -21,12 +22,12 @@ const BestSellingSection = () => {
                 </h2>
 
             </div>
-            <div className="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-3 gap-2 min-h-80 ">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-2 min-h-80 ">
                 {isLoading
                     ? loadingState
                     : data?.data
-                        ?.slice(0, 6)
-                        .map((product) => (
+                        ?.slice(0, 8)
+                        .map((product: TProduct) => (
                             <ProductCart key={product._id} product={product} />
                         ))}
             </div>

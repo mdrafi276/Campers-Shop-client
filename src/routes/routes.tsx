@@ -11,6 +11,7 @@ import ProductsPage from "@/components/pages/Products/ProductsPage";
 import CartPage from "@/components/cartPage/CartPage";
 import Checkout from "../components/Checkout/Checkout";
 import OrderSuccess from "@/components/Checkout/OrderSuccess";
+import { EvervaultCardDemo } from "@/components/Demo";
 const router = createBrowserRouter([
     {
         path: '/',
@@ -56,6 +57,10 @@ const router = createBrowserRouter([
             {
                 path: '/order-success',
                 element: <OrderSuccess />
+            },
+            {
+                path: '/demo',
+                element: <EvervaultCardDemo />
             },
         ]
     }

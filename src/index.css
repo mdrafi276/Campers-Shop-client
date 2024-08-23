@@ -8,3 +8,16 @@
     background-repeat: no-repeat;
 
 }
+
+::-webkit-scrollbar {
+    width: 15px;
+}
+
+::-webkit-scrollbar-track {
+    background: #000000;
+    ;
+}
+
+::-webkit-scrollbar-thumb {
+    background: black;
+}

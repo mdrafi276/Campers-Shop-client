@@ -1,6 +1,12 @@
 import { useState } from "react";
+// export type TAccrodionForDetailsProps = {
+//     title?: string;
+//     description?: string;
+//     outOfStock?: string;
+//     cetegory?: string
 
-const AccrodionForDetailsPage = ({ data }) => {
+// }
+const AccrodionForDetailsPage = ({ data }: any) => {
     const [isOpen, setIsOpen] = useState(null);
     const dataArr = [
         {
@@ -22,7 +28,7 @@ const AccrodionForDetailsPage = ({ data }) => {
 
 
     ];
-    const toggle = (idx) => {
+    const toggle = (idx: any) => {
         setIsOpen((prevIdx) => (prevIdx === idx ? null : idx))
     };
 

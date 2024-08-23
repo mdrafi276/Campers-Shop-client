@@ -1,10 +1,8 @@
-import { useGetBestProductsQuery } from "@/redux/api/baseApi";
-import { Button } from "../ui/button";
-import { Link } from "react-router-dom";
+import { useGetProductsQuery } from "@/redux/api/baseApi";
 import ThreeDCardDemo from "../3d-card";
 
 const BestSellingSection = () => {
-    const { data, isLoading } = useGetBestProductsQuery(undefined);
+    const { data, isLoading } = useGetProductsQuery(undefined);
 
     let loadingState;
 
@@ -26,7 +24,7 @@ const BestSellingSection = () => {
                     ? loadingState
                     : data?.data
                         ?.slice(4, 8)
-                        .map((product) => (
+                        .map((product: any) => (
                             <ThreeDCardDemo key={product._id} product={product} />
                         ))}
             </div>

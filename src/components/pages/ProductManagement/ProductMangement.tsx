@@ -14,6 +14,7 @@ import {
 import { Link } from "react-router-dom";
 import { toast } from "sonner";
 import Swal from "sweetalert2";
+import { TProduct } from "../Products/ProductCart";
 
 const ProductManagement = () => {
     const { data, isLoading } = useGetProductsQuery(undefined);
@@ -52,7 +53,8 @@ const ProductManagement = () => {
     };
 
     return (
-        <div className='bg-[#000000]  pb-6 lg:pb-20 md:pb-10 bg-gradient-to-br lg:pt-5 from-[#310202] via-[#000] to-[#000000] h-full lg:min-h-screen'>
+
+        <div className='bg-[#000000] border-2 pb-6 lg:pb-20 md:pb-10 bg-gradient-to-br lg:pt-5 from-[#310202] via-[#000] to-[#000000] h-full lg:min-h-screen'>
             <div className="max-w-screen-xl   mx-auto lg:py-8 px-3  ">
                 <div className="border border-white z-20 bg-transparent backdrop-blur-md rounded-3xl p-8">
                     <div className="pb-6 flex items-center justify-between border-b border-gray-300">
@@ -77,7 +79,7 @@ const ProductManagement = () => {
                             </TableRow>
                         </TableHeader>
                         <TableBody>
-                            {data?.data?.map((item) => (
+                            {data?.data?.map((item: TProduct) => (
                                 <TableRow key={item._id}>
                                     <TableCell>
                                         <img

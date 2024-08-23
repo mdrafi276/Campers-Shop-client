@@ -1,6 +1,6 @@
 const GoogleMap = () => {
     return (
-        <section className="my-20 lg:my-28 px-3  min-h-[600px] max-w-screen-xl mx-auto">
+        <section className="  lg:my-28 px-3  min-h-[400px] max-w-screen-xl mx-auto">
             <div className="mb-5">
                 <h2
                     data-aos="fade-up"
@@ -9,8 +9,8 @@ const GoogleMap = () => {
 
                 </h2>
             </div>
-            <div className="flex selection:bg-black flex-col-reverse md:flex-row justify-between md:items-center">
-                <div className="flex-1 space-y-10 mt-3 lg:mt-0">
+            <div className="flex selection:bg-black flex-col-reverse lg:flex-row-reverse justify-between md:items-center">
+                <div className="flex-1 space-y-10 mt-1 lg:mt-0">
                     <h2
                         data-aos="fade-up"
                         className=" text-xl md:text-3xl text-center font-bold text-red-600"
